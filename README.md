@@ -29,25 +29,24 @@ Diagrammes relationnels et SQL pour créer la table
 1)
 ![rel_01](rel_01.PNG)
 ```
-create table professors(ssn int);
-create table courses(courseid int);
-create table teaches(ssn int, courseid int, semesterid int);
+create table professors(ssn int, PRIMARY KEY (ssn));
+create table courses(courseid int, PRIMARY KEY (courseid));
+create table teaches(ssn int, courseid int, semesterid int, PRIMARY KEY (ssn, courseid));
 ```
 
 3)
-![rel_01](rel_01.PNG)
+![RM3](RM3.PNG)
 ```
-create table professors(ssn int);
-create table courses(courseid int);
-create table teaches(ssn int, courseid int, semesterid int);
+create table professors(ssn int, courseID int, PRIMARY KEY (ssn), FOREIGN KEY (courseID));
+create table courses(courseID int, PRIMARY KEY (courseid));
 ```
-
 5)
-![rel_01](rel_01.PNG)
+
+![rel_05](rel_05.png)
 ```
-create table professors(ssn int);
-create table courses(courseid int);
-create table teaches(ssn int, courseid int, semesterid int);
+create table professors(ssn int, PRIMARY KEY (ssn));
+create table courses(courseid int, PRIMARY KEY (courseid));
+create table teaches(ssn int, courseid int, semesterid int, PRIMARY KEY (ssn, courseid, semesterid));
 ```
 
 6)
